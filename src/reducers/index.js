@@ -8,10 +8,15 @@ export const placeOfDepartureSlice = createSlice({
     reducers: {
         add: (state, action) => {
             state.values.push(action.payload)
+        },
+        remove: (state, action) => {
+            let som = state.values.slice(1, 0)
+            state.values.push(som)
+            console.log(...action.payload);
         }
     }
 })
 
-export const {add} = placeOfDepartureSlice.actions
+export const {add, remove} = placeOfDepartureSlice.actions
 
 export default placeOfDepartureSlice.reducer

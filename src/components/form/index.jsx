@@ -15,14 +15,14 @@ export const Form = () => {
 
   return (
     <div>
-            <form className='form'>
-            <input onChange={(e) => setDepartureInput(e.target.value)} className='form' type="text" placeholder='Place of Departure' required></input>
-            <input className='form' type="text" placeholder='Place of Landing' required></input>
-            <input className='form' type="text" placeholder='Time of Arrival ' required></input>
-            <input className='form' type="text" placeholder='Plane Model' required></input>
-            <button className='form' type='submit' onClick={(e) => {
-              e.preventDefault()
-              dispatch(add())}}>123</button>
+        <form className='form'>
+          <input onChange={(e) => setDepartureInput(e.target.value)} className='form' type="text" placeholder='Place of Departure' required></input>
+          <input onChange={(e) => setLandingInput(e.target.value)} className='form' type="text" placeholder='Place of Landing' required></input>
+          <input onChange={(e) => setTimeOfArrivalInput(e.target.value)} className='form' type="text" placeholder='Time of Arrival ' required></input>
+          <input onChange={(e) => setPlaneModelInput(e.target.value)} className='form' type="text" placeholder='Plane Model' required></input>
+          <button  className='form' type='submit' onClick={(e) => {
+            e.preventDefault()
+            dispatch(add([departureInput, landingInput, timeOfArrivalInput, planeModelInput]))}}>Submit</button>
         </form>
     </div>
   )

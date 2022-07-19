@@ -8,17 +8,13 @@ export const List = () => {
 
   const placeOfDeparture = useSelector(state => state.departure.values)
 
-  useEffect(() => {
-    console.log(placeOfDeparture);
-  }, [placeOfDeparture])
-
   const listMap = placeOfDeparture.map((x, index) => {
     return <ListItems i={index} key={uuidv4()} departure={x[0]} landing={x[1]} time={x[2]} model={x[3]} /> })
   
 
   return (
     <div>
-      <h1>{listMap}</h1>
+      {listMap}
     </div>
   )
 }

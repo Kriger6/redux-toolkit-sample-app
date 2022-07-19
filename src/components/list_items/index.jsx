@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 export const ListItems = (props) => {
 
     const dispatch = useDispatch()
-    console.log(props);
+    
   return (
     <div>
         <h1>{props.departure}</h1>

@@ -4,7 +4,8 @@ export const placeOfDepartureSlice = createSlice({
     name: "placeOfDeparture",
     initialState: {
         values: [],
-        toggle: true
+        toggle: true,
+        selected: null
     },
     reducers: {
         add: (state, action) => {
@@ -15,10 +16,16 @@ export const placeOfDepartureSlice = createSlice({
         },
         toggle: (state) => {
             state.toggle = !state.toggle
+        },
+        select: (state, action) => {
+            state.selected = action.payload
+        },
+        edit: (state, action) => {
+            state.values[state.selected] = action.payload
         }
     }
 })
 
-export const {add, remove, toggle} = placeOfDepartureSlice.actions
+export const {add, remove, toggle, select, edit} = placeOfDepartureSlice.actions
 
 export default placeOfDepartureSlice.reducer

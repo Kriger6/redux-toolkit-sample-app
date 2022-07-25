@@ -7,8 +7,8 @@ export const Toggle = () => {
     const dispatch = useDispatch()
   return (
     <div>
-        <label onClick={() => dispatch(toggle())} htmlFor="toggle">Toggle Visibility</label>
-        <input id="toggle" type="checkbox"></input>
+        <label htmlFor="toggle">Toggle Visibility</label>
+        <input onClick={() => dispatch(toggle())} id="toggle" type="checkbox"></input>
     </div>
   )
 }

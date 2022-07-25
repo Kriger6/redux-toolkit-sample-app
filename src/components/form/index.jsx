@@ -22,6 +22,9 @@ export const Form = () => {
           <input onChange={(e) => setPlaneModelInput(e.target.value)} className='form' type="text" placeholder='Plane Model' required></input>
           <button  className='form' type='submit' onClick={(e) => {
             e.preventDefault()
+          if (departureInput === undefined || landingInput === undefined || timeOfArrivalInput === undefined || planeModelInput === undefined) {
+              return
+            }
             dispatch(add([departureInput, landingInput, timeOfArrivalInput, planeModelInput]))}}>Submit</button>
         </form>
     </div>

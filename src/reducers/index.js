@@ -21,7 +21,11 @@ export const placeOfDepartureSlice = createSlice({
             state.selected = action.payload
         },
         edit: (state, action) => {
-            state.values[state.selected] = action.payload
+            if (action.payload.includes(undefined)) {
+                return
+            } else {
+                state.values[state.selected] = action.payload
+            }
         }
     }
 })
